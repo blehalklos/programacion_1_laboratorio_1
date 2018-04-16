@@ -10,14 +10,15 @@ typedef struct
     float sueldo;
     char sexo;
 
-}eEmpleado;
+}eEmpleados;
 
-void mostrarEmpleado(eEmpleado);
-void mostrarEmpleados(eEmpleado vec[], int tam);
+void mostrarEmpleados(eEmpleados);
+void mostrarEmpleados(eEmpleados[], int);
+void ordenarEmpleados(eEmpleados[], int);
 
 int main()
 {
-    eEmpleado plantel[] = {{"Juan",1234, 50000.50, 'm'},{"Ana", 2222, 1, 'f'},{"Luis", 3333, 100000, 'm'}};
+    eEmpleados plantel[] = {{"Juan",1234, 50000.50, 'm'},{"Ana", 2222, 1, 'f'},{"Luis", 3333, 100000, 'm'}};
 /*
     unEmpleado.legajo = 1234;
     strcpy(unEmpleado.nombre, "Juan");
@@ -38,14 +39,15 @@ int main()
 
     return 0;
 }
-    void mostrarEmpleados(eEmpleado vec[], int tam)
+    void mostrarEmpleados(eEmpleados vec[], int tam)
     {
         for (int i=0; i< tam; i++)
         {
             mostrarEmpleados (vec[i]);
         }
+    }
 
-    void mostrarEmpleado(eEmpleado emp)
+    void mostrarEmpleados(eEmpleados emp)
     {
     printf("nombre: %s \n", emp.nombre);
     printf("legajo: %d \n", emp.legajo);
@@ -53,5 +55,20 @@ int main()
     printf("sexo: %c \n", emp.sexo);
     }
 
+    void ordenarEmpleados(eEmpleados vec[], int tam)
+    {
+        eEmpleados aux;
 
+        for (int i=0; i< tam-1; i++)
+        {
+            for(int j= i+1; j<tam; j++)
+            {
+                if (strcmp(vec[i].nombre, vec[j].nombre) > 0)
+                {
+
+                }
+            }
+        }
     }
+
+
